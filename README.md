@@ -1,0 +1,2 @@
+# mydbot
+My Discord botでmydbot.  

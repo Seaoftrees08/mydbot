@@ -1,20 +1,21 @@
 //必要なパッケージをインポートする
 import { GatewayIntentBits, Client, Partials, Message } from 'discord.js'
 import dotenv from 'dotenv'
+import { MentionBot } from './mentionBot'
 
 //.envファイルを読み込む
 dotenv.config()
 
 //Botで使うGetwayIntents、partials
 const client = new Client({
-  intents: [
-    GatewayIntentBits.DirectMessages,
-    GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMembers,
-    GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.MessageContent,
-  ],
-  partials: [Partials.Message, Partials.Channel],
+    intents: [
+        GatewayIntentBits.DirectMessages,
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.MessageContent,
+    ],
+    partials: [Partials.Message, Partials.Channel],
 })
 
 //Botがきちんと起動したか確認
@@ -25,12 +26,18 @@ client.once('ready', () => {
     }
 })
 
-//!timeと入力すると現在時刻を返信するように
+//!メイン処理
 client.on('messageCreate', async (message: Message) => {
     if (message.author.bot) return
-    console.log(message.content)
-    if (message.content.startsWith('!ping')) {
-        message.channel.send('Pong!')
+
+    //mentionBot
+    if (message.content.startsWith('$mention')) {
+        const limit = 10
+        MentionBot.repeatMention(limit, message)
+
+    //roleMaster
+    }else if(message.content.startsWith('$role')){
+
     }
 })
 

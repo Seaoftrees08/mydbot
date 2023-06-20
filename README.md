@@ -12,4 +12,11 @@ My Discord botでmydbot.
 本番のtokenは`token.txt`を使用.    
 これはアップロードしないこと.  
 
+# discord.jsについて
+古いほうのドキュメントは[こっち](https://old.discordjs.dev/#/docs/discord.js/main/general/welcome)
+
+新しいほうは[これ](https://discord.js.org/docs/packages/core/main)
+
+
+新しいほうは記述量が少なく、クラスの詳細があまり書かれてない気がする（読み方が悪い説ある）
 

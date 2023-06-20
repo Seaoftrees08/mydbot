@@ -20,3 +20,5 @@ My Discord botでmydbot.
 
 新しいほうは記述量が少なく、クラスの詳細があまり書かれてない気がする（読み方が悪い説ある）
 
+# .gitignore
+[これ](https://github.com/microsoft/TypeScript-Node-Starter/blob/master/.gitignore)をそのままパクった.

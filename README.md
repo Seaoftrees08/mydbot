@@ -17,6 +17,9 @@ My Discord botでmydbot.
 
 新しいほうは[これ](https://discord.js.org/docs/packages/core/main)
 
+[ここ](https://discordjs.guide/)がいろいろ乗ってて助かる.
+
+
 
 新しいほうは記述量が少なく、クラスの詳細があまり書かれてない気がする（読み方が悪い説ある）
 

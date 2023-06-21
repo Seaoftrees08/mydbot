@@ -1,4 +1,4 @@
-import { Message } from 'discord.js'
+import { Interaction, Message } from 'discord.js'
 
 /**
  * メンションを繰り返すクラス

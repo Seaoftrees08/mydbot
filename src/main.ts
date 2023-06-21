@@ -32,11 +32,17 @@ client.on('messageCreate', async (message: Message) => {
 
     //mentionBot
     if (message.content.startsWith('$mention')) {
-        const limit = 10
-        MentionBot.repeatMention(limit, message)
+        MentionBot.repeatMention(message)
+
+    //mention-settime
+    }else if(message.content.startsWith('$settime')){
+        MentionBot.setMilliSecond(message)
 
     //roleMaster
     }else if(message.content.startsWith('$role')){
+
+    //help
+    }else if(message.content.startsWith("$help")){
 
     }
 })

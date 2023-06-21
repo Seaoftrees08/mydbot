@@ -52,6 +52,11 @@ export class MentionBot{
         }
     }
 
+    /**
+     * メンションの間隔を設定するメソッド
+     * 
+     * @param message Discordから送られてきたメッセージ
+     */
     static setMilliSecond(message: Message){
         const literals = message.content.split(" ")
         const time = literals.length>=2 ? parseInt(literals[1]) : Number.NaN

@@ -34,7 +34,9 @@ client.once('ready', async () => {
         }
     ];
 
-    await client.application?.commands.set(roleCmd, process.env.TEST_SERVER_ID!);//Test Server
+    //await client.application?.commands.set(roleCmd, process.env.TEST_SERVER_ID!);//Test Server
+    await client.application?.commands.set(roleCmd, process.env.INTEGRATION_GROUP_ID!);//Test Server
+
     if(client.user){
         console.log(client.user.tag)
     }

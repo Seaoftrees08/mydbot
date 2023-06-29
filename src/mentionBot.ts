@@ -38,9 +38,9 @@ export class MentionBot{
             }else{
                 for(let i=0; i<times; i++){
                     if(mentionedRoles.size>0){
-                        message.channel.send(`${literals[2]} ${mentionedRoles.first()}`)
+                        message.channel.send(`${literals[3]} ${mentionedRoles.first()}`)
                     }else if(mentionedUsers.size>0){
-                        message.channel.send(`${literals[2]} ${mentionedUsers.first()}`)
+                        message.channel.send(`${literals[3]} ${mentionedUsers.first()}`)
                     }else{
                         message.channel.send('ERROR! Even though the sum of "mentioned" exceeded 1, ' +
                             'both roles and users did not exceed 0! Couse in mentioBot.ts')
@@ -60,7 +60,7 @@ export class MentionBot{
     static setMilliSecond(message: Message){
         const literals = message.content.split(" ")
         const time = literals.length>=2 ? parseInt(literals[1]) : Number.NaN
-        console.log(`len: ${literals.length}, time: ${time}}, litelal[1] is ${literals[1]}`)
+        //console.log(`len: ${literals.length}, time: ${time}}, litelal[1] is ${literals[1]}`)
         if(literals.length>=2 && !Number.isNaN(time)){
             this.ms = time
             message.reply(`メンションの感覚時間を${time}msに設定しました.`)

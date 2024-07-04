@@ -27,19 +27,19 @@ async def on_message(message):
     if message.content.startswith('$arkmanager') and len(args)==2:
         if args[1] == "start":
             if running:
-              await message.channel.send("すでにサーバーが起動しています。")
+                await message.channel.send("すでにサーバーが起動しています。")
             else:    
-              result = subprocess.run(["arkmanager", "start"], capture_output=True, text=True, encoding="utf-8")
-              await message.channel.send("cmdline:")
-              await message.channel.send("```" + formatter(result.stdout) + "```")
-              running = True
+                result = subprocess.run(["arkmanager", "start"], capture_output=True, text=True, encoding="utf-8")
+                await message.channel.send("cmdline:")
+                await message.channel.send("```" + formatter(result.stdout) + "```")
+                running = True
             success = True
         elif args[1] == "stop":
             if running:
-              result = subprocess.run(["arkmanager", "stop"], capture_output=True, text=True, encoding="utf-8")
-              await message.channel.send("cmdline:")
-              await message.channel.send("```" + formatter(result.stdout) + " ```")
-              running = False
+                result = subprocess.run(["arkmanager", "stop"], capture_output=True, text=True, encoding="utf-8")
+                await message.channel.send("cmdline:")
+                await message.channel.send("```" + formatter(result.stdout) + " ```")
+                running = False
             else:
                 await message.channel.send("すでにサーバーは落ちています")
             success = True
@@ -48,11 +48,10 @@ async def on_message(message):
             await message.channel.send("cmdline:")
             await message.channel.send("```" + formatter(result.stdout)[:-2] + "```")
             success = True
-
-    if not success:
-        await message.channel.send("コマンドが間違っています")
-        await message.channel.send("`$arkmanager start` ark鯖を起動")
-        await message.channel.send("`$arkmanager stop` ark鯖を停止")
-        await message.channel.send("`$arkmanager status` ark鯖のステータスを確認")
+        else:
+            await message.channel.send("コマンドが間違っています")
+            await message.channel.send("`$arkmanager start` ark鯖を起動")
+            await message.channel.send("`$arkmanager stop` ark鯖を停止")
+            await message.channel.send("`$arkmanager status` ark鯖のステータスを確認")
 
 client.run(token)
